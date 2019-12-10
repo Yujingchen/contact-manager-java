@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+
+<title>Contact list</title>
+</head>
+<body>
+	<h1>Contact list</h1>
+	<table class="table table-striped">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>Post Code</th>
+		</tr>
+		<tr th:each="contact:${contacts}">
+			<td th:text="${contact.lastName}">1</td>
+			<td th:text="${contact.firstName}">2</td>
+			<td th:text="${contact.phone}">3</td>
+			<td th:text="${contact.email}">4</td>
+			<td th:text="${contact.address}">5</td>
+			<td th:text="${contact.postcode}">6</td>
+			<td><a th:href="@{/edit/{id}(id=${contact.id})}">Edit</a></td>
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${contact.id})}">Delete</a></td>
+		</tr>
+	</table>
+	<a href="/add">Add Contact</a>
+
+</body>
+</html>
