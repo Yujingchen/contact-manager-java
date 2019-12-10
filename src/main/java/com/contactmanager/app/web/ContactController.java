@@ -39,7 +39,7 @@ private ContactRepository contactRepository;
 	@RequestMapping(value = "/contactlist", method = RequestMethod.GET)
 	public String showcontactlist(Model model) {
 		model.addAttribute("contacts", contactRepository.findAll());
-		return "contacts";
+		return "contact";
 	}
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)

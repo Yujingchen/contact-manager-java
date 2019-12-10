@@ -11,6 +11,8 @@ import com.contactmanager.app.domain.User;
 import com.contactmanager.app.domain.UserRepository;
 
 
+
+
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 	private final UserRepository repository;
