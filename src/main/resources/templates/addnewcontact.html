@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Add</title>
+</head>
+<body>
+	<h1>Add Contact</h1>
+	<div>
+		<form th:object ="${contact}" th:action="@{save}" action="#" method="post">
+			<label for="firstName">first name</label>
+			<input type ="text" id="firstName" th:field="*{firstName}" />
+			<label for="lastName">last name</label> 
+			<input type="text" id="lastName" th:field="*{lastName}" />
+			<label for="phone">phone</label>
+			<input type ="text" id="phone" th:field="*{phone}" />
+			<label for="email">email</label>
+			<input type ="text" id="email" th:field="*{email}" />
+			<label for="address">address</label>
+			<input type ="text" id="address" th:field="*{address}" />
+		 	<label for="postcode">postcode</label>
+			<input type ="text" id="postcode" th:field="*{postcode}" />
+			<input type ="submit"value="Save"></input>
+		</form>
+	</div>
+</body>
+</html>
